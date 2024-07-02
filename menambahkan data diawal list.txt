@@ -1,0 +1,34 @@
+// menambahkan data diawal list
+package main
+import (
+	"fmt"
+ )
+  type node struct {
+		Value int
+		Next *Node
+  }
+  	func main() {
+		// create a sample linked list: 1-> 2 -> 3->
+		head := &Node{Value: 1}
+		head.Next = &Node{Value: 2}
+		head.Next.Next = &Node{Value: 3}
+
+
+		// Add a new node with value 0 to the beginning of the list
+		head = addNodeToBeginning(head, 0)
+
+		// Print the updated linked list
+		printList(head) 
+	}
+	func addNodeToBeginning(head *Node, Value int) *Node {
+		newNode := &Node{Value: value}
+		newNode.Next = head 
+		return newNode
+	}
+	func printList(head *node) {
+		for head != nil {
+			fmt.Print(head.Value, " -> ")
+			head = head.Next 
+		}
+		fmt.Println()
+	}
